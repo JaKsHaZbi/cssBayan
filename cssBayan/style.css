@@ -1,7 +1,7 @@
 :root {
-  /* --cl-yellow: #f6f6ed; */
-  --cl-yellow: green;
+  --cl-yellow: #f6f6ed;
   --cl-black: #000;
+  --cl-blue: blue;
 }
 
 * {
@@ -35,21 +35,81 @@ html {
     overflow: hidden;
 }
 
-.content__accordion:hover {
-    cursor: pointer;
+.content__accordion {
+    color: var(--cl-blue);
 }
 
-.content__accordion:hover .accordion__item label {
+.content__accordion:hover {
+    cursor: pointer;
     color: var(--cl-black);
 }
 
-input[type=radio]:checked ~ .item__content {
-    /* display: none; */
-    /* color: red; */
-    height: auto;
+.content__accordion:hover .accordion__item .item__icon {
+    display: block;
 }
 
-input[type=radio]:checked + label {
+.item__label {
+    display: block;
+    width: 100%;
+
+    background-color: red;
+}
+
+.item__label > input {
+    visibility: hidden;
+    position: absolute;
+}
+
+.item__label > input + div {
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.item__label > input:checked + div {
+    background-color: #ffd6bb;
+    border: 1px solid #ff6600;
+
+    color: var(--cl-black);
+}
+
+.item__label > input:checked + div > .item__icon {
+    background-color: pink;
+}
+
+.item__label > input:checked ~ .item__content {
+    max-height: 500px;
+
+    transition: max-height 0.5s ease;
+}
+
+.item__title {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    
+    height: 30px;
+    width: 100%;
+}
+
+.item__icon {
+    display: none;
+    height: 20px;
+    width: 20px;
+
+    background-color: aqua;
+}
+
+/* .item__icon  */
+
+/* input[type=radio]:checked ~ .item__content {
+    max-height: 500px;
+
+    transition: max-height 0.5s ease;
+} */
+
+/* input[type=radio]:checked + label {
     color: var(--cl-black);
 }
 
@@ -59,7 +119,7 @@ input[type=radio]:checked + label {
     color: blue;
 
     user-select: none;
-}
+} */
 /* .accordion__item label{
     color: red;
 } */
@@ -67,9 +127,16 @@ input[type=radio]:checked + label {
 .item__content {
     display: flex;
     justify-content: center;
-    height: 0;
+    max-height: 0;
 
+    cursor: pointer;
     overflow: hidden;
+}
+
+img {
+    height: 30%;
+    width: 30%;
+    margin: 10px 0;
 }
 
 @media (max-width: 820px) {
