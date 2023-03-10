@@ -1,3 +1,28 @@
-body {
-    background-color: pink;
+:root {
+  /* --cl-yellow: #f6f6ed; */
+  --cl-yellow: green;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+
+    background-color: var(--cl-yellow);
+}
+
+.content {
+    width: 90%;
+    margin: 0 auto;
 }
