@@ -1,7 +1,7 @@
 :root {
   --cl-yellow: #f6f6ed;
   --cl-black: #000;
-  --cl-blue: blue;
+  --cl-blue: #1800ca;
 }
 
 * {
@@ -21,6 +21,9 @@ html {
     flex-direction: column;
 
     min-height: 100vh;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
 
     background-color: var(--cl-yellow);
 }
@@ -56,11 +59,11 @@ html {
 }
 
 .item__label > input {
-    visibility: hidden;
-    position: absolute;
+    display: none;
 }
 
 .item__label > input + div {
+    padding: 20px 0;
     cursor: pointer;
     border: 2px solid transparent;
 }
@@ -73,7 +76,7 @@ html {
 }
 
 .item__label > input:checked + div > .item__icon {
-    background-color: pink;
+    background: no-repeat center url('./assets/svg/xmark-solid.svg');
 }
 
 .item__label > input:checked ~ .item__content {
@@ -99,6 +102,7 @@ html {
     width: 20px;
 
     background-color: aqua;
+    background: no-repeat center url('./assets/svg/plus-solid.svg');
 }
 
 /* .item__icon  */
