@@ -21,7 +21,6 @@ html {
     display: flex;
     flex-direction: column;
 
-    /* min-height: 100vh; */
     height: 101vh;
 
     font-family: 'Roboto', sans-serif;
@@ -71,10 +70,6 @@ html {
     transition: padding 0.3s ease-in-out;
 }
 
-/* .item__label > input:checked + div, .item__label:hover {
-    color: var(--cl-black);
-} */
-
 .item__label > input:checked + div > .item__icon {
     background: no-repeat center url('./assets/svg/xmark-solid.svg');
     transition: background-image 0.3s ease-in-out, opacity 1s ease-in-out;
@@ -84,6 +79,16 @@ html {
     max-height: calc(var(--index) * 16);
 
     transition: max-height 1s ease;
+}
+
+.item__label:active, .item__label:active > .item__title {
+    color: var(--cl-blue);
+
+    opacity: 0.5;
+}
+
+.item__label:active .item__icon {
+    filter: invert(10%) sepia(98%) saturate(5581%) hue-rotate(244deg) brightness(101%) contrast(129%); 
 }
 
 .item__title {
@@ -102,7 +107,6 @@ html {
     width: calc(var(--index));
 
     background: no-repeat center url('./assets/svg/plus-solid.svg');
-    /* opacity: 0; */
     transition: background-image 0.3s ease-in-out, opacity 0.5s ease-in-out;
 }
 
