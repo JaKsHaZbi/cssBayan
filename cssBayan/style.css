@@ -81,6 +81,16 @@ html {
     transition: max-height 1s ease;
 }
 
+.item__label:active, .item__label:active > .item__title {
+    color: var(--cl-blue);
+
+    opacity: 0.5;
+}
+
+.item__label:active .item__icon {
+    filter: invert(10%) sepia(98%) saturate(5581%) hue-rotate(244deg) brightness(101%) contrast(129%); 
+}
+
 .item__title {
     display: flex;
     flex-direction: row;
